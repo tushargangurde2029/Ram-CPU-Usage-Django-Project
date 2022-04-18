@@ -1,14 +1,3 @@
-"""from django.shortcuts import render
-import psutil
-
-# Create your views here.
-def hello(request):     
-    print('The CPU usage is: ', psutil.cpu_percent(4))
-    print('RAM memory % used:', psutil.virtual_memory()[2])
-    return render(request,"homepage.html")"""
-
-# from django.http import JsonResponse
-
 import psutil   
 from django.shortcuts import render
 from django.views.generic import View
@@ -22,24 +11,7 @@ class HomeView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'index.html')
    
-   
-####################################################
-   
-## if you don't want to user rest_framework
-   
-# def get_data(request, *args, **kwargs):
-#
-# data ={
-#             "sales" : 100,
-#             "person": 10000,
-#     }
-#
-# return JsonResponse(data) # http response
-   
-   
-#######################################################
-   
-## using rest_framework classes
+
    
 class ChartData(APIView):
     authentication_classes = []
