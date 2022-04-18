@@ -73,7 +73,7 @@ class ChartData(APIView):
                      "chartlabel_ram":chartlabel_ram,
                      "chartlabel_cpu":chartlabel_cpu,
              }
-        if ram_usage<0:
+        if ram_usage>50:
             subject = 'This is the alert for Ram Usage'
             message = ' Your RAM Usage is above 50%'
             email_from = settings.EMAIL_HOST_USER
